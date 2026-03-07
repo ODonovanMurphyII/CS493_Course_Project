@@ -1,0 +1,20 @@
+Stakeholders
+  Primary: 
+    Developers
+    Professor
+  Secondary:
+    Website admins
+    System admins
+
+Questions for Stakeholders
+  Primary:
+    What are the requirements?
+    What are the constraints?
+    What is the required deadline?
+    What are the roles of each developer?
+    What is our tech stack comprised of?
+
+  Secondary:
+    What is the targets restrictions regarding automated webcrawling?
+    What is the targets security and privacy policy on scrapped data?
+    
