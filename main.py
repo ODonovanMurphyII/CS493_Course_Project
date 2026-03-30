@@ -14,7 +14,7 @@ if attempt.status_code == 200:
     rawData = rawData.decode('utf-8')
     strings = rawData.splitlines()
     i = 0
-    while i < len(strings):
+    while i < len(strings):  #TODO need to make this section more robust
         if "sitemap" in strings[i]:
             strings[i] = strings[i].lstrip("Sitemap: ")
             pagesToExplore.append(strings[i])
@@ -24,6 +24,12 @@ if attempt.status_code == 200:
 else:
     print("Error:" + attempt.status_code)
 
-
-#Eventual recursive call
+#eventual recursive call and possible DFS algorithm
+#for now, just getting header and URL information
+i = 0
+while(i < len(pagesToExplore)):
+    site = requests.get(pagesToExplore.pop())
+    strings = site.content.decode('utf-8').splitlines()
+    
+    
 
