@@ -2,35 +2,19 @@ import requests
 from urllib.robotparser import RobotFileParser
 
 headerInfo = {
-    'User Agent': 'StudentCrawlerv1.0'
+    'User Agent': 'StudentCrawlerv1.0@CCSU.EDU'
 }
-print("https://", end="")
+
+robot = RobotFileParser()
+print("Enter url")
 URL = input()
-pagesToExplore = []
-pagesToAvoid = []
+req = requests.get(URL)
+robot.parse(req.text.splitlines())
+sitemaps = robot.site_maps()
+for sitemap in sitemaps:
+    print(sitemap)
 
-# First stage
-attempt = requests.get("https://" + URL + "/robots.txt")
-if attempt.status_code == 200:
-    rawData = attempt.content
-    rawData = rawData.decode('utf-8')
-    strings = rawData.splitlines()
-    i = 0
-    currentString = rawData[i]
-    while(currentString != "User-agent: *"):
-        i += 1
-        currentString = strings[i]
-    print(currentString)
 
-else:
-    print("Error:" + str(attempt.status_code))
-
-#eventual recursive call and possible DFS algorithm
-#for now, just getting header and URL information
-i = 0
-while(i < len(pagesToExplore)):
-    site = requests.get(pagesToExplore.pop())
-    strings = site.content.decode('utf-8').splitlines()
     
     
 
