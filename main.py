@@ -39,6 +39,8 @@ class Crawler:
         print("Parsing File...")
         self.req = requests.get("https://www.cnn.com/robots.txt")           ## TODO hardcoded for now
         if (self.req.ok):
+            if("crawl_delay" in self.req.text):
+                pass #TODO implement some code to pull the crawl delay from robots.txt otherwise defaults to 5 seconds
             self.RobotsParser.parse(self.req.text.splitlines())
             self.sentinal = input("Add a search topic or just press enter to crawl all allowable sites:")
         else:
@@ -66,6 +68,7 @@ class Crawler:
                     locsToTryAgain.append(self.req)
                 time.sleep(self.haltTime)
                 currentNumberOfFiles += 1
+                self.outputFilename = "site" + str(currentNumberOfFiles)
         else:
             for site in sites:
                 print("Working on " + site)
@@ -79,6 +82,7 @@ class Crawler:
                         locsToTryAgain.append(self.req)
                 time.sleep(self.haltTime)
                 currentNumberOfFiles += 1
+                self.outputFilename = "site" + str(currentNumberOfFiles)
 
 
                     
@@ -89,7 +93,6 @@ class Crawler:
         
     
 newsBot = Crawler('StudentCrawlerv1.0@CCSU.EDU')
-newsBot.haltTime = 5
 newsBot.parse_robots_txt()
 newsBot.storePages(newsBot.sentinal)
 
