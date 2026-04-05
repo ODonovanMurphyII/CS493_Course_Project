@@ -42,27 +42,47 @@ class Crawler:
             print("Failed to parse robots.txt" + str(self.req))
 
     def storePages(self, sentinel):
-        currentNumberOfFiles = len(file for file in self.outputDirectory.iterdir() if file.is_file())
+        all = False
+        locsToTryAgain = []
+        currentNumberOfFiles = len([file for file in self.outputDirectory.iterdir() if file.is_file()])
         currentNumberOfFiles += 1
         self.outputFilename = "site" + str(currentNumberOfFiles)
+        sites = self.RobotsParser.site_maps()
         if not sentinel: 
             print("No sentienl provided. Storing every allowable page to ~/storedPages")
-        else:
-            for site in self.RobotsParser.site_maps():
-                self.reg = requests.get(site)
+            all = True
+        if all:
+            for site in sites:
+                self.req = requests.get(site)
                 if(self.req.ok):
-                    pass
+                    self.outputFile = open(self.outputDirectory / self.outputFilename, "w", encoding="utf-8")
+                    self.outputFile.write(self.req.content.decode('utf-8'))
+                    self.outputFile.close()
+                else:
+                    locsToTryAgain.append(self.req)
+        else:
+            for site in sites:
+                self.req = requests.get(site)
+                if(sentinel in self.req.content or sentinel in site):
+                    if(self.req.ok):
+                        self.outputFile = open(self.outputDirectory / self.outputFilename, "w", encoding="utf-8")
+                        self.outputFile.write(self.req.content.decode('utf-8'))
+                        self.outputFile.close()
+                    else:
+                        locsToTryAgain.append(self.req)
+
+
+                    
 
                 
             
         
         
     
-    
-
-
 newsBot = Crawler('StudentCrawlerv1.0@CCSU.EDU')
 newsBot.parse_robots_txt()
+newsBot.storePages("")
+
 
 ## Lets see all the sites we are allowed to crawl
 siteMaps = newsBot.RobotsParser.site_maps()
@@ -71,7 +91,7 @@ for site in siteMaps:
         print("We can crawl:" + site)
     else:
         print("Site not allowed:" + site)
-
+newsBot.storePages("")
 
 
 
