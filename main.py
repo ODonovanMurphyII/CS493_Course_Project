@@ -2,6 +2,7 @@ import requests
 import pathlib 
 import datetime
 import os
+import time
 from urllib.robotparser import RobotFileParser
 
 class Logger:
@@ -20,10 +21,11 @@ class Crawler:
         self.userAgent = userAgent
         self.RobotsParser = RobotFileParser()
         self.req = None
-        self.halt = 5               # delay in seconds between requests
+        self.haltTime = 5               # delay in seconds between requests
         self.outputFile = None
         self.outputFilename = None
         self.fileOutputAllowed = True
+        self.sentinal = None
         try:
             self.outputDirectory = pathlib.Path(__file__).parent / "storedPages"
             self.outputDirectory.mkdir(parents=True, exist_ok=True)
@@ -38,6 +40,7 @@ class Crawler:
         self.req = requests.get("https://www.cnn.com/robots.txt")           ## TODO hardcoded for now
         if (self.req.ok):
             self.RobotsParser.parse(self.req.text.splitlines())
+            self.sentinal = input("Add a search topic or just press enter to crawl all allowable sites:")
         else:
             print("Failed to parse robots.txt" + str(self.req))
 
@@ -53,6 +56,7 @@ class Crawler:
             all = True
         if all:
             for site in sites:
+                print("Working on " + site)
                 self.req = requests.get(site)
                 if(self.req.ok):
                     self.outputFile = open(self.outputDirectory / self.outputFilename, "w", encoding="utf-8")
@@ -60,8 +64,11 @@ class Crawler:
                     self.outputFile.close()
                 else:
                     locsToTryAgain.append(self.req)
+                time.sleep(self.haltTime)
+                currentNumberOfFiles += 1
         else:
             for site in sites:
+                print("Working on " + site)
                 self.req = requests.get(site)
                 if(sentinel in self.req.content or sentinel in site):
                     if(self.req.ok):
@@ -70,6 +77,8 @@ class Crawler:
                         self.outputFile.close()
                     else:
                         locsToTryAgain.append(self.req)
+                time.sleep(self.haltTime)
+                currentNumberOfFiles += 1
 
 
                     
@@ -80,18 +89,10 @@ class Crawler:
         
     
 newsBot = Crawler('StudentCrawlerv1.0@CCSU.EDU')
+newsBot.haltTime = 5
 newsBot.parse_robots_txt()
-newsBot.storePages("")
+newsBot.storePages(newsBot.sentinal)
 
-
-## Lets see all the sites we are allowed to crawl
-siteMaps = newsBot.RobotsParser.site_maps()
-for site in siteMaps:
-    if newsBot.RobotsParser.can_fetch(newsBot.userAgent[1],site):
-        print("We can crawl:" + site)
-    else:
-        print("Site not allowed:" + site)
-newsBot.storePages("")
 
 
 
