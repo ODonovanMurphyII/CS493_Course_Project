@@ -3,6 +3,7 @@ import pathlib
 import datetime
 import os
 import time
+import re
 from urllib.robotparser import RobotFileParser
 
 class Logger:
@@ -24,6 +25,7 @@ class Crawler:
         self.haltTime = 5               # delay in seconds between requests
         self.outputFile = None
         self.outputFilename = None
+        self.outputFiles = []
         self.fileOutputAllowed = True
         self.sentinal = None
         try:
@@ -36,22 +38,23 @@ class Crawler:
     def parse_robots_txt(self):
         print("Enter URL:", end="")
         URL = input()                       ## TODO maybe its useful to hang onto the URL
-        print("Parsing File...")
-        self.req = requests.get("https://www.cnn.com/robots.txt")           ## TODO hardcoded for now
+        print("Attempting to Parse Robots.txt...")
+        self.req = requests.get(URL)          
         if (self.req.ok):
             if("crawl_delay" in self.req.text):
                 pass #TODO implement some code to pull the crawl delay from robots.txt otherwise defaults to 5 seconds
             self.RobotsParser.parse(self.req.text.splitlines())
-            self.sentinal = input("Add a search topic or just press enter to download all allowable sites:")
+            self.sentinal = input("Add a search topic or just press enter to download all sitemaps:")
         else:
             print("Failed to parse robots.txt" + str(self.req))
 
-    def storePages(self, sentinel):
+
+    def storeSitemaps(self, sentinel):
         all = False
         locsToTryAgain = []
         currentNumberOfFiles = len([file for file in self.outputDirectory.iterdir() if file.is_file()])
         currentNumberOfFiles += 1
-        self.outputFilename = "site" + str(currentNumberOfFiles)
+        self.outputFilename = "site" + str(currentNumberOfFiles) + ".xml"
         sites = self.RobotsParser.site_maps()
         if not sentinel: 
             print("No sentienl provided. Storing every allowable page to ~/storedPages")
@@ -79,11 +82,39 @@ class Crawler:
                 if(self.req.ok):
                     if(sentinel in self.req.content.decode('utf-8') or sentinel in site):
                         currentNumberOfFiles += 1
-                        self.outputFilename = self.sentinal + "_" + str(currentNumberOfFiles)
+                        self.outputFilename = self.sentinal + "_" + str(currentNumberOfFiles) + ".xml"
+                        self.outputFiles.append(self.outputFilename)
                         self.outputFile = open(self.outputDirectory / self.outputFilename, "w", encoding="utf-8")
                         self.outputFile.write(self.req.content.decode('utf-8'))
                         self.outputFile.close()
                 time.sleep(self.haltTime)
+        
+    
+    def downloadPages(self, sitemapFileName, sentinal):
+            self.outputDirectory = pathlib.Path(__file__).parent /  "_pages" / sentinal
+            sitemap = open(self.outputDirectory / sitemapFileName, "r", encoding="utf-8")
+            targetPages = []
+            cleanUrls = []
+            data = sitemap.read()
+            URLEntries = re.findall(r'<url>(.*?)</url>', data, re.DOTALL)
+            for entry in URLEntries:
+                if sentinal in entry:
+                    targetPages.append(entry)
+            targetPages = "".join(targetPages)
+            cleanUrls = re.findall(r'<loc>(.*?)</loc>', targetPages, re.DOTALL)
+            currentNumberOfPages = 0
+            for cleanUrl in cleanUrls:
+                if(self.RobotsParser.can_fetch(self.userAgent,cleanUrl)):
+                    self.req = requests.get(cleanUrl)
+                    time.sleep(5)
+                    if(self.req.ok):
+                        self.outputFilename = sentinal + "_page" + str(currentNumberOfPages) + ".html"
+                        self.outputFile = open(self.outputDirectory / self.outputFilename, "w", encoding="utf-8")
+                        self.outputFile.write(self.req.content.decode('utf-8'))
+                        self.outputFile.close()
+                        currentNumberOfPages += 1
+                
+
         
 
 
@@ -94,9 +125,10 @@ class Crawler:
         
         
     
-newsBot = Crawler('StudentCrawlerv1.0@CCSU.EDU')
+newsBot = Crawler('*')
 newsBot.parse_robots_txt()
-newsBot.storePages(newsBot.sentinal)
+newsBot.storeSitemaps(newsBot.sentinal)
+newsBot.downloadPages("trump_1.xml", "trump")
 
 
 
