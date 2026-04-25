@@ -42,7 +42,7 @@ class Crawler:
             if("crawl_delay" in self.req.text):
                 pass #TODO implement some code to pull the crawl delay from robots.txt otherwise defaults to 5 seconds
             self.RobotsParser.parse(self.req.text.splitlines())
-            self.sentinal = input("Add a search topic or just press enter to crawl all allowable sites:")
+            self.sentinal = input("Add a search topic or just press enter to download all allowable sites:")
         else:
             print("Failed to parse robots.txt" + str(self.req))
 
@@ -70,19 +70,21 @@ class Crawler:
                 currentNumberOfFiles += 1
                 self.outputFilename = "site" + str(currentNumberOfFiles)
         else:
+            currentNumberOfFiles = 0
+            self.outputDirectory = pathlib.Path(__file__).parent /  "_pages" / self.sentinal
+            self.outputDirectory.mkdir(parents=True, exist_ok=True)
             for site in sites:
                 print("Working on " + site)
                 self.req = requests.get(site)
-                if(sentinel in self.req.content or sentinel in site):
-                    if(self.req.ok):
+                if(self.req.ok):
+                    if(sentinel in self.req.content.decode('utf-8') or sentinel in site):
+                        currentNumberOfFiles += 1
+                        self.outputFilename = self.sentinal + "_" + str(currentNumberOfFiles)
                         self.outputFile = open(self.outputDirectory / self.outputFilename, "w", encoding="utf-8")
                         self.outputFile.write(self.req.content.decode('utf-8'))
                         self.outputFile.close()
-                    else:
-                        locsToTryAgain.append(self.req)
                 time.sleep(self.haltTime)
-                currentNumberOfFiles += 1
-                self.outputFilename = "site" + str(currentNumberOfFiles)
+        
 
 
                     
@@ -95,6 +97,7 @@ class Crawler:
 newsBot = Crawler('StudentCrawlerv1.0@CCSU.EDU')
 newsBot.parse_robots_txt()
 newsBot.storePages(newsBot.sentinal)
+
 
 
 

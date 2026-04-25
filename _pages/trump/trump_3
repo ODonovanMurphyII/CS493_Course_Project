@@ -1,32 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>
+      <loc>https://www.cnn.com/entertainment/movies</loc>
+      <lastmod>2026-04-24T22:08:59.909000+00:00</lastmod>
+      <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/entertainment/movies"/>
+      <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/entertainment/movies"/>
+      <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/entertainment/movies"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/entertainment/movies"/>
+   </url>
+   <url>
+      <loc>https://www.cnn.com/entertainment</loc>
+      <lastmod>2026-04-24T22:07:38.737000+00:00</lastmod>
+      <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/entertainment"/>
+      <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/entertainment"/>
+      <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/entertainment"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/entertainment"/>
+   </url>
+   <url>
+      <loc>https://www.cnn.com/digital-my-happy-place</loc>
+      <lastmod>2026-04-24T16:35:49.030000+00:00</lastmod>
+      <image:image>
+         <image:loc>https://media.cnn.com/api/v1/images/stellar/prod/img-0857.jpg?c=original/w_800</image:loc>
+      </image:image>
+      <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/digital-my-happy-place"/>
+      <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/digital-my-happy-place"/>
+      <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/digital-my-happy-place"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/digital-my-happy-place"/>
+   </url>
+   <url>
       <loc>https://www.cnn.com/sport</loc>
-      <lastmod>2026-04-05T04:25:52.591000+00:00</lastmod>
+      <lastmod>2026-04-24T15:06:51.733000+00:00</lastmod>
       <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/sport"/>
       <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/sport"/>
       <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/sport"/>
       <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/sport"/>
    </url>
    <url>
-      <loc>https://www.cnn.com/us</loc>
-      <lastmod>2026-04-04T20:42:49.244000+00:00</lastmod>
-      <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/us"/>
-      <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/us"/>
-      <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/us"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/us"/>
+      <loc>https://www.cnn.com/travel</loc>
+      <lastmod>2026-04-24T08:24:55.393000+00:00</lastmod>
+      <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/travel"/>
+      <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/travel"/>
+      <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/travel"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/travel"/>
    </url>
    <url>
-      <loc>https://www.cnn.com/health</loc>
-      <lastmod>2026-04-03T13:25:00.171000+00:00</lastmod>
-      <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/health"/>
-      <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/health"/>
-      <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/health"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/health"/>
+      <loc>https://www.cnn.com/markets/premarkets</loc>
+      <lastmod>2026-04-23T20:30:26.036000+00:00</lastmod>
+      <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/markets/premarkets"/>
+      <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/markets/premarkets"/>
+      <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/markets/premarkets"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/markets/premarkets"/>
+   </url>
+   <url>
+      <loc>https://www.cnn.com/markets</loc>
+      <lastmod>2026-04-23T20:30:25.730000+00:00</lastmod>
+      <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/markets"/>
+      <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/markets"/>
+      <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/markets"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/markets"/>
+   </url>
+   <url>
+      <loc>https://www.cnn.com/markets/fear-and-greed</loc>
+      <lastmod>2026-04-23T20:30:25.403000+00:00</lastmod>
+      <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/markets/fear-and-greed"/>
+      <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/markets/fear-and-greed"/>
+      <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/markets/fear-and-greed"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/markets/fear-and-greed"/>
+   </url>
+   <url>
+      <loc>https://www.cnn.com/markets/after-hours</loc>
+      <lastmod>2026-04-23T20:30:23.299000+00:00</lastmod>
+      <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/markets/after-hours"/>
+      <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/markets/after-hours"/>
+      <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/markets/after-hours"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/markets/after-hours"/>
+   </url>
+   <url>
+      <loc>https://www.cnn.com/entertainment/tv-shows</loc>
+      <lastmod>2026-04-23T19:33:13.025000+00:00</lastmod>
+      <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/entertainment/tv-shows"/>
+      <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/entertainment/tv-shows"/>
+      <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/entertainment/tv-shows"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/entertainment/tv-shows"/>
    </url>
    <url>
       <loc>https://www.cnn.com/style</loc>
-      <lastmod>2026-04-03T04:27:00.141000+00:00</lastmod>
+      <lastmod>2026-04-23T09:12:41.225000+00:00</lastmod>
       <image:image>
          <image:loc>https://media.cnn.com/api/v1/images/stellar/prod/logo-cnnstyle.png?q=h_192,w_192,x_0,y_0/w_800</image:loc>
       </image:image>
@@ -36,20 +95,101 @@
       <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/style"/>
    </url>
    <url>
-      <loc>https://www.cnn.com/travel</loc>
-      <lastmod>2026-04-03T00:34:10.963000+00:00</lastmod>
-      <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/travel"/>
-      <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/travel"/>
-      <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/travel"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/travel"/>
+      <loc>https://www.cnn.com/sport/wnba</loc>
+      <lastmod>2026-04-22T19:11:33.034000+00:00</lastmod>
+      <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/sport/wnba"/>
+      <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/sport/wnba"/>
+      <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/sport/wnba"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/sport/wnba"/>
    </url>
    <url>
-      <loc>https://www.cnn.com/entertainment</loc>
-      <lastmod>2026-04-02T21:57:15.104000+00:00</lastmod>
-      <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/entertainment"/>
-      <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/entertainment"/>
-      <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/entertainment"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/entertainment"/>
+      <loc>https://www.cnn.com/world/seasons</loc>
+      <lastmod>2026-04-22T15:24:16.421000+00:00</lastmod>
+      <image:image>
+         <image:loc>https://media.cnn.com/api/v1/images/stellar/prod/seasons-card.jpg?c=original/w_800</image:loc>
+      </image:image>
+      <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/world/seasons"/>
+      <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/world/seasons"/>
+      <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/world/seasons"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/world/seasons"/>
+   </url>
+   <url>
+      <loc>https://www.cnn.com/health</loc>
+      <lastmod>2026-04-22T14:14:09.233000+00:00</lastmod>
+      <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/health"/>
+      <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/health"/>
+      <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/health"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/health"/>
+   </url>
+   <url>
+      <loc>https://www.cnn.com/world/africa</loc>
+      <lastmod>2026-04-22T07:46:20.468000+00:00</lastmod>
+      <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/world/africa"/>
+      <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/world/africa"/>
+      <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/world/africa"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/world/africa"/>
+   </url>
+   <url>
+      <loc>https://www.cnn.com/us</loc>
+      <lastmod>2026-04-21T15:07:50.527000+00:00</lastmod>
+      <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/us"/>
+      <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/us"/>
+      <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/us"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/us"/>
+   </url>
+   <url>
+      <loc>https://www.cnn.com/world</loc>
+      <lastmod>2026-04-21T07:13:23.975000+00:00</lastmod>
+      <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/world"/>
+      <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/world"/>
+      <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/world"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/world"/>
+   </url>
+   <url>
+      <loc>https://www.cnn.com/entertainment/celebrities</loc>
+      <lastmod>2026-04-20T18:36:50.107000+00:00</lastmod>
+      <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/entertainment/celebrities"/>
+      <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/entertainment/celebrities"/>
+      <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/entertainment/celebrities"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/entertainment/celebrities"/>
+   </url>
+   <url>
+      <loc>https://www.cnn.com/world/asia</loc>
+      <lastmod>2026-04-20T02:06:45.061000+00:00</lastmod>
+      <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/world/asia"/>
+      <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/world/asia"/>
+      <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/world/asia"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/world/asia"/>
+   </url>
+   <url>
+      <loc>https://www.cnn.com/cnn-underscored/gifts/mothers-day-2026</loc>
+      <lastmod>2026-04-15T19:54:06.427000+00:00</lastmod>
+      <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/cnn-underscored/gifts/mothers-day-2026"/>
+      <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/cnn-underscored/gifts/mothers-day-2026"/>
+      <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/cnn-underscored/gifts/mothers-day-2026"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/cnn-underscored/gifts/mothers-day-2026"/>
+   </url>
+   <url>
+      <loc>https://www.cnn.com/visuals/data-graphics</loc>
+      <lastmod>2026-04-13T16:05:28.554000+00:00</lastmod>
+      <image:image>
+         <image:loc>https://media.cnn.com/api/v1/images/stellar/prod/visuals-black-bg.png?c=original/w_800</image:loc>
+      </image:image>
+      <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/visuals/data-graphics"/>
+      <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/visuals/data-graphics"/>
+      <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/visuals/data-graphics"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/visuals/data-graphics"/>
+   </url>
+   <url>
+      <loc>https://www.cnn.com/world/call-to-earth</loc>
+      <lastmod>2026-04-13T09:27:43.955000+00:00</lastmod>
+      <image:image>
+         <image:loc>https://media.cnn.com/api/v1/images/stellar/prod/cte-card.jpg?c=original/w_800</image:loc>
+      </image:image>
+      <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/world/call-to-earth"/>
+      <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/world/call-to-earth"/>
+      <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/world/call-to-earth"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/world/call-to-earth"/>
    </url>
    <url>
       <loc>https://www.cnn.com/politics</loc>
@@ -60,76 +200,12 @@
       <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/politics"/>
    </url>
    <url>
-      <loc>https://www.cnn.com/world/africa</loc>
-      <lastmod>2026-04-02T14:44:03.742000+00:00</lastmod>
-      <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/world/africa"/>
-      <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/world/africa"/>
-      <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/world/africa"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/world/africa"/>
-   </url>
-   <url>
-      <loc>https://www.cnn.com/entertainment/movies</loc>
-      <lastmod>2026-04-01T17:51:11.332000+00:00</lastmod>
-      <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/entertainment/movies"/>
-      <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/entertainment/movies"/>
-      <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/entertainment/movies"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/entertainment/movies"/>
-   </url>
-   <url>
-      <loc>https://www.cnn.com/markets/premarkets</loc>
-      <lastmod>2026-04-01T16:32:36.671000+00:00</lastmod>
-      <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/markets/premarkets"/>
-      <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/markets/premarkets"/>
-      <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/markets/premarkets"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/markets/premarkets"/>
-   </url>
-   <url>
-      <loc>https://www.cnn.com/markets</loc>
-      <lastmod>2026-04-01T16:32:36.311000+00:00</lastmod>
-      <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/markets"/>
-      <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/markets"/>
-      <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/markets"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/markets"/>
-   </url>
-   <url>
-      <loc>https://www.cnn.com/markets/fear-and-greed</loc>
-      <lastmod>2026-04-01T16:32:35.932000+00:00</lastmod>
-      <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/markets/fear-and-greed"/>
-      <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/markets/fear-and-greed"/>
-      <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/markets/fear-and-greed"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/markets/fear-and-greed"/>
-   </url>
-   <url>
-      <loc>https://www.cnn.com/markets/after-hours</loc>
-      <lastmod>2026-04-01T16:32:33.604000+00:00</lastmod>
-      <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/markets/after-hours"/>
-      <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/markets/after-hours"/>
-      <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/markets/after-hours"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/markets/after-hours"/>
-   </url>
-   <url>
-      <loc>https://www.cnn.com/sport/wnba</loc>
-      <lastmod>2026-04-01T12:45:44.922000+00:00</lastmod>
-      <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/sport/wnba"/>
-      <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/sport/wnba"/>
-      <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/sport/wnba"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/sport/wnba"/>
-   </url>
-   <url>
       <loc>https://www.cnn.com/climate</loc>
       <lastmod>2026-03-30T19:23:57.940000+00:00</lastmod>
       <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/climate"/>
       <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/climate"/>
       <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/climate"/>
       <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/climate"/>
-   </url>
-   <url>
-      <loc>https://www.cnn.com/entertainment/tv-shows</loc>
-      <lastmod>2026-03-27T18:53:09.647000+00:00</lastmod>
-      <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/entertainment/tv-shows"/>
-      <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/entertainment/tv-shows"/>
-      <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/entertainment/tv-shows"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/entertainment/tv-shows"/>
    </url>
    <url>
       <loc>https://www.cnn.com/sport/soccer</loc>
@@ -172,14 +248,6 @@
       <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/sport/mlb"/>
    </url>
    <url>
-      <loc>https://www.cnn.com/entertainment/celebrities</loc>
-      <lastmod>2026-03-25T21:38:18.638000+00:00</lastmod>
-      <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/entertainment/celebrities"/>
-      <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/entertainment/celebrities"/>
-      <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/entertainment/celebrities"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/entertainment/celebrities"/>
-   </url>
-   <url>
       <loc>https://www.cnn.com/5-things-newsletter-podcast-video</loc>
       <lastmod>2026-03-25T11:40:40.238000+00:00</lastmod>
       <image:image>
@@ -189,17 +257,6 @@
       <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/5-things-newsletter-podcast-video"/>
       <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/5-things-newsletter-podcast-video"/>
       <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/5-things-newsletter-podcast-video"/>
-   </url>
-   <url>
-      <loc>https://www.cnn.com/world/seasons</loc>
-      <lastmod>2026-03-25T09:44:57.431000+00:00</lastmod>
-      <image:image>
-         <image:loc>https://media.cnn.com/api/v1/images/stellar/prod/seasons-card.jpg?c=original/w_800</image:loc>
-      </image:image>
-      <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/world/seasons"/>
-      <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/world/seasons"/>
-      <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/world/seasons"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/world/seasons"/>
    </url>
    <url>
       <loc>https://www.cnn.com/us/education</loc>
@@ -232,17 +289,6 @@
       <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/us/race-and-identity"/>
       <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/us/race-and-identity"/>
       <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/us/race-and-identity"/>
-   </url>
-   <url>
-      <loc>https://www.cnn.com/world/call-to-earth</loc>
-      <lastmod>2026-03-19T12:32:30.068000+00:00</lastmod>
-      <image:image>
-         <image:loc>https://media.cnn.com/api/v1/images/stellar/prod/cte-card.jpg?c=original/w_800</image:loc>
-      </image:image>
-      <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/world/call-to-earth"/>
-      <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/world/call-to-earth"/>
-      <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/world/call-to-earth"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/world/call-to-earth"/>
    </url>
    <url>
       <loc>https://www.cnn.com/style/paris-fashion-week</loc>
@@ -287,17 +333,6 @@
       <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/travel/chance-encounters"/>
    </url>
    <url>
-      <loc>https://www.cnn.com/digital-my-happy-place</loc>
-      <lastmod>2026-02-25T22:22:38.227000+00:00</lastmod>
-      <image:image>
-         <image:loc>https://media.cnn.com/api/v1/images/stellar/prod/img-0857.jpg?c=original/w_800</image:loc>
-      </image:image>
-      <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/digital-my-happy-place"/>
-      <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/digital-my-happy-place"/>
-      <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/digital-my-happy-place"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/digital-my-happy-place"/>
-   </url>
-   <url>
       <loc>https://www.cnn.com/cnn-underscored/beauty/guide-to-age-defying-beauty</loc>
       <lastmod>2026-02-22T13:00:34.903000+00:00</lastmod>
       <image:image>
@@ -318,14 +353,6 @@
       <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/risk-takers-ceo-leaders-2026"/>
       <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/risk-takers-ceo-leaders-2026"/>
       <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/risk-takers-ceo-leaders-2026"/>
-   </url>
-   <url>
-      <loc>https://www.cnn.com/world/asia</loc>
-      <lastmod>2026-02-18T01:25:18.062000+00:00</lastmod>
-      <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/world/asia"/>
-      <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/world/asia"/>
-      <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/world/asia"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/world/asia"/>
    </url>
    <url>
       <loc>https://www.cnn.com/politics/epstein-files</loc>
@@ -419,14 +446,6 @@
       <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/cnn-underscored"/>
       <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/cnn-underscored"/>
       <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/cnn-underscored"/>
-   </url>
-   <url>
-      <loc>https://www.cnn.com/world</loc>
-      <lastmod>2026-01-21T21:04:35.003000+00:00</lastmod>
-      <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/world"/>
-      <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/world"/>
-      <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/world"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/world"/>
    </url>
    <url>
       <loc>https://www.cnn.com/world/call-to-earth-archive</loc>
@@ -524,17 +543,6 @@
       <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/cnn-underscored/ces-2026"/>
       <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/cnn-underscored/ces-2026"/>
       <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/cnn-underscored/ces-2026"/>
-   </url>
-   <url>
-      <loc>https://www.cnn.com/visuals/data-graphics</loc>
-      <lastmod>2025-12-19T16:53:56.984000+00:00</lastmod>
-      <image:image>
-         <image:loc>https://media.cnn.com/api/v1/images/stellar/prod/visuals-black-bg.png?c=original/w_800</image:loc>
-      </image:image>
-      <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/visuals/data-graphics"/>
-      <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/visuals/data-graphics"/>
-      <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/visuals/data-graphics"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://edition.cnn.com/visuals/data-graphics"/>
    </url>
    <url>
       <loc>https://www.cnn.com/travel/destinations/qatar</loc>
@@ -1075,6 +1083,9 @@
    <url>
       <loc>https://www.cnn.com/cnn-underscored/earth-week</loc>
       <lastmod>2023-04-21T19:40:06.856000+00:00</lastmod>
+      <image:image>
+         <image:loc>https://media.cnn.com/api/v1/images/stellar/prod/earth-week-lead-cnnu.jpg?c=original/w_800</image:loc>
+      </image:image>
       <xhtml:link rel="alternate" hreflang="en-gb" href="https://edition.cnn.com/cnn-underscored/earth-week"/>
       <xhtml:link rel="alternate" hreflang="en-ca" href="https://www.cnn.com/cnn-underscored/earth-week"/>
       <xhtml:link rel="alternate" hreflang="en-us" href="https://www.cnn.com/cnn-underscored/earth-week"/>
