@@ -40,7 +40,7 @@ class Crawler:
         self.outputFilename = None
         self.outputFiles = []
         self.fileOutputAllowed = True
-        self.sentinal = None
+        self.sentinel = None
         self.downloadedPages = 0
         try:
             self.outputDirectory = pathlib.Path(__file__).parent / "allowedSitemaps"
@@ -59,7 +59,7 @@ class Crawler:
                 if("crawl_delay" in self.req.text):
                     pass #TODO implement some code to pull the crawl delay from robots.txt otherwise defaults to 5 seconds
                 self.RobotsParser.parse(self.req.text.splitlines())
-                self.sentinal = input("Add a search topic or just press enter to download all sitemaps:")
+                self.sentinel = input("Add a search topic or just press enter to download all sitemaps:")
                 logger.log_entry("Parsed Robots.txt!")
             else:
                 print("Failed to parse robots.txt" + str(self.req))
@@ -95,17 +95,17 @@ class Crawler:
                 self.outputFilename = "site" + str(currentNumberOfFiles)
         else:
             currentNumberOfFiles = 0
-            self.outputDirectory = pathlib.Path(__file__).parent /  "_pages" / self.sentinal
+            self.outputDirectory = pathlib.Path(__file__).parent /  "_pages" / self.sentinel
             self.outputDirectory.mkdir(parents=True, exist_ok=True)
             for site in sites:
                 print("Working on " + site)
                 self.req = requests.get(site)
                 if(self.req.ok):
-                    needle = rf"\b{self.sentinal}\b"
+                    needle = rf"\b{self.sentinel}\b"
                     if(re.search(needle,self.req.content.decode('utf-8')) or re.search(needle,site)):
                         logger.log_entry(f"Found {needle} in {site} adding to xml stash")
                         currentNumberOfFiles += 1
-                        self.outputFilename = self.sentinal + "_" + str(currentNumberOfFiles) + ".xml"
+                        self.outputFilename = self.sentinel + "_" + str(currentNumberOfFiles) + ".xml"
                         self.outputFiles.append(self.outputFilename)
                         self.outputFile = open(self.outputDirectory / self.outputFilename, "w", encoding="utf-8")
                         self.outputFile.write(self.req.content.decode('utf-8'))
@@ -151,12 +151,12 @@ class Crawler:
 logger = Logger()
 crawler = Crawler('*')
 crawler.parse_robots_txt(logger)
-crawler.storeSitemaps(crawler.sentinal, logger)
+crawler.storeSitemaps(crawler.sentinel, logger)
 for file in crawler.outputFiles:
-    crawler.downloadPages(file, crawler.sentinal, logger)
+    crawler.downloadPages(file, crawler.sentinel, logger)
 if(crawler.downloadedPages != 0):
     crawler.downloadedPages -= 1        ## Hacky but good enough for now
-print(str(crawler.downloadedPages) + " pages found related to " + crawler.sentinal)
+print(str(crawler.downloadedPages) + " pages found related to " + crawler.sentinel)
 logger.logFile.close()
 
 
