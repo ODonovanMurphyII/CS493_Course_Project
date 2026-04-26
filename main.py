@@ -9,14 +9,26 @@ from urllib.robotparser import RobotFileParser
 
 class Logger:
     def __init__(self):
-        self.timestamp = datetime.now()
+        self.timestamp = datetime.date.today()
         self.urlsCrawled = []
         self.noLog = False
         try:
             self.logFile = open("log.txt", "w", encoding="utf-8")
+            self.logFile.write("Session Init:" + str(self.timestamp) + "\n")
         except Exception as e:
-            print(f"Error creating log file: {e}")
+            print(f"Error creating log file: {e}" + "\n")
             self.noLog = True
+
+    def log_entry(self, entry):
+        self.timestamp = str(datetime.date.today())
+        try:
+            self.logFile.write(self.timestamp + " ")
+            self.logFile.write(entry + '\n')
+        except Exception as e:
+            print("Logger Failed")
+            self.logFile.write(self.timestamp)
+            self.logFile.write(e)
+            self.logFile.write("\n")
         
 class Crawler:
     def __init__(self, userAgent):
@@ -37,7 +49,7 @@ class Crawler:
             self.fileOutputAllowed = False
             print(f"Error File Output Not Allowed. Check Permissions. {e}")
 
-    def parse_robots_txt(self):
+    def parse_robots_txt(self, logger: Logger):
         print("Please enter full path to target robots.txt file:", end="")
         URL = input()                       ## TODO maybe its useful to hang onto the URL
         print("Attempting to Parse Robots.txt...")
@@ -48,14 +60,16 @@ class Crawler:
                     pass #TODO implement some code to pull the crawl delay from robots.txt otherwise defaults to 5 seconds
                 self.RobotsParser.parse(self.req.text.splitlines())
                 self.sentinal = input("Add a search topic or just press enter to download all sitemaps:")
+                logger.log_entry("Parsed Robots.txt!")
             else:
                 print("Failed to parse robots.txt" + str(self.req))
+                logger.log_entry("Failed to parse robots.txt")
         else:
             print("Invalid robots.txt path. Try again")
             sys.exit()
 
 
-    def storeSitemaps(self, sentinel):
+    def storeSitemaps(self, sentinel, logger: Logger):
         all = False
         locsToTryAgain = []
         currentNumberOfFiles = len([file for file in self.outputDirectory.iterdir() if file.is_file()])
@@ -68,6 +82,7 @@ class Crawler:
         if all:
             for site in sites:
                 print("Working on " + site)
+                logger.log_entry("Parsing sitemap:" + site)
                 self.req = requests.get(site)
                 if(self.req.ok):
                     self.outputFile = open(self.outputDirectory / self.outputFilename, "w", encoding="utf-8")
@@ -88,6 +103,7 @@ class Crawler:
                 if(self.req.ok):
                     needle = rf"\b{self.sentinal}\b"
                     if(re.search(needle,self.req.content.decode('utf-8')) or re.search(needle,site)):
+                        logger.log_entry(f"Found {needle} in {site} adding to xml stash")
                         currentNumberOfFiles += 1
                         self.outputFilename = self.sentinal + "_" + str(currentNumberOfFiles) + ".xml"
                         self.outputFiles.append(self.outputFilename)
@@ -97,7 +113,7 @@ class Crawler:
                 time.sleep(self.haltTime)
         
     
-    def downloadPages(self, sitemapFileName, sentinal):
+    def downloadPages(self, sitemapFileName, sentinal, logger: Logger):
             self.outputDirectory = pathlib.Path(__file__).parent /  "_pages" / sentinal
             sitemap = open(self.outputDirectory / sitemapFileName, "r", encoding="utf-8")
             targetPages = []
@@ -115,6 +131,7 @@ class Crawler:
                     self.req = requests.get(cleanUrl)
                     time.sleep(self.haltTime)
                     if(self.req.ok):
+                        logger.log_entry(f"Good REQ. Saving page {cleanUrl}")
                         self.outputFilename = sentinal + "_page" + str(currentNumberOfPages) + ".html"
                         self.outputFile = open(self.outputDirectory / self.outputFilename, "w", encoding="utf-8")
                         self.outputFile.write(self.req.content.decode('utf-8'))
@@ -131,15 +148,16 @@ class Crawler:
             
         
         
-    
+logger = Logger()
 crawler = Crawler('*')
-crawler.parse_robots_txt()
-crawler.storeSitemaps(crawler.sentinal)
+crawler.parse_robots_txt(logger)
+crawler.storeSitemaps(crawler.sentinal, logger)
 for file in crawler.outputFiles:
-    crawler.downloadPages(file, crawler.sentinal)
+    crawler.downloadPages(file, crawler.sentinal, logger)
 if(crawler.downloadedPages != 0):
     crawler.downloadedPages -= 1        ## Hacky but good enough for now
 print(str(crawler.downloadedPages) + " pages found related to " + crawler.sentinal)
+logger.logFile.close()
 
 
 
