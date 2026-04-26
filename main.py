@@ -4,6 +4,7 @@ import datetime
 import os
 import time
 import re
+import sys
 from urllib.robotparser import RobotFileParser
 
 class Logger:
@@ -28,25 +29,30 @@ class Crawler:
         self.outputFiles = []
         self.fileOutputAllowed = True
         self.sentinal = None
+        self.downloadedPages = 0
         try:
-            self.outputDirectory = pathlib.Path(__file__).parent / "storedPages"
+            self.outputDirectory = pathlib.Path(__file__).parent / "allowedSitemaps"
             self.outputDirectory.mkdir(parents=True, exist_ok=True)
         except Exception as e:
             self.fileOutputAllowed = False
             print(f"Error File Output Not Allowed. Check Permissions. {e}")
 
     def parse_robots_txt(self):
-        print("Enter URL:", end="")
+        print("Please enter full path to target robots.txt file:", end="")
         URL = input()                       ## TODO maybe its useful to hang onto the URL
         print("Attempting to Parse Robots.txt...")
-        self.req = requests.get(URL)          
-        if (self.req.ok):
-            if("crawl_delay" in self.req.text):
-                pass #TODO implement some code to pull the crawl delay from robots.txt otherwise defaults to 5 seconds
-            self.RobotsParser.parse(self.req.text.splitlines())
-            self.sentinal = input("Add a search topic or just press enter to download all sitemaps:")
+        if(re.search("/robots.txt", URL, re.IGNORECASE)):
+            self.req = requests.get(URL)          
+            if (self.req.ok):
+                if("crawl_delay" in self.req.text):
+                    pass #TODO implement some code to pull the crawl delay from robots.txt otherwise defaults to 5 seconds
+                self.RobotsParser.parse(self.req.text.splitlines())
+                self.sentinal = input("Add a search topic or just press enter to download all sitemaps:")
+            else:
+                print("Failed to parse robots.txt" + str(self.req))
         else:
-            print("Failed to parse robots.txt" + str(self.req))
+            print("Invalid robots.txt path. Try again")
+            sys.exit()
 
 
     def storeSitemaps(self, sentinel):
@@ -57,7 +63,7 @@ class Crawler:
         self.outputFilename = "site" + str(currentNumberOfFiles) + ".xml"
         sites = self.RobotsParser.site_maps()
         if not sentinel: 
-            print("No sentienl provided. Storing every allowable page to ~/storedPages")
+            print("No sentienl provided. Storing every allowable page to ~/allowedSitemaps")
             all = True
         if all:
             for site in sites:
@@ -80,7 +86,8 @@ class Crawler:
                 print("Working on " + site)
                 self.req = requests.get(site)
                 if(self.req.ok):
-                    if(sentinel in self.req.content.decode('utf-8') or sentinel in site):
+                    needle = rf"\b{self.sentinal}\b"
+                    if(re.search(needle,self.req.content.decode('utf-8')) or re.search(needle,site)):
                         currentNumberOfFiles += 1
                         self.outputFilename = self.sentinal + "_" + str(currentNumberOfFiles) + ".xml"
                         self.outputFiles.append(self.outputFilename)
@@ -113,7 +120,7 @@ class Crawler:
                         self.outputFile.write(self.req.content.decode('utf-8'))
                         self.outputFile.close()
                         currentNumberOfPages += 1
-                
+            self.downloadedPages += currentNumberOfPages
 
         
 
@@ -125,10 +132,15 @@ class Crawler:
         
         
     
-newsBot = Crawler('*')
-newsBot.parse_robots_txt()
-newsBot.storeSitemaps(newsBot.sentinal)
-newsBot.downloadPages("trump_1.xml", "trump")
+crawler = Crawler('*')
+crawler.parse_robots_txt()
+crawler.storeSitemaps(crawler.sentinal)
+for file in crawler.outputFiles:
+    crawler.downloadPages(file, crawler.sentinal)
+if(crawler.downloadedPages != 0):
+    crawler.downloadedPages -= 1        ## Hacky but good enough for now
+print(str(crawler.downloadedPages) + " pages found related to " + crawler.sentinal)
+
 
 
 
