@@ -113,7 +113,7 @@ class Crawler:
             for cleanUrl in cleanUrls:
                 if(self.RobotsParser.can_fetch(self.userAgent,cleanUrl)):
                     self.req = requests.get(cleanUrl)
-                    time.sleep(5)
+                    time.sleep(self.haltTime)
                     if(self.req.ok):
                         self.outputFilename = sentinal + "_page" + str(currentNumberOfPages) + ".html"
                         self.outputFile = open(self.outputDirectory / self.outputFilename, "w", encoding="utf-8")
